@@ -1,0 +1,74 @@
+<!--
+<article>
+        <div class="row">
+           <div class="col-sm-4">
+              <div>
+                 <div class="hovereffect">
+                      <img class="img" [src]=img alt="mac"/>
+                      <div class="overlay">
+                         <p>Le système solaire externe : 
+                            Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
+                            Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
+                           Charon, la mission New Horizons, les objets transneptuniens,
+                           les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                         </p>
+                       </div>
+                 </div>
+               </div>
+              </div>
+          <div class="col-sm-4">
+            <div>
+             <div class="hovereffect">
+              <img class="img" [src]=img2 alt="mac"/>
+                <div class="overlay">
+                  <p>Le système solaire externe : 
+                      Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
+                      Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
+                      Charon, la mission New Horizons, les objets transneptuniens,
+                      les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                  </p>
+                </div>
+              </div>
+             </div>
+           </div>
+            <div class="col-sm-4">
+              <div>
+                <div class="hovereffect">
+                   <img class="img" [src]=img3 alt="mac"/>
+                   <div class="overlay">
+                     <p>Le système solaire externe : 
+                        Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
+                        Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
+                        Charon, la mission New Horizons, les objets transneptuniens,
+                        les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                      </p>
+                    </div>
+                </div>
+              </div>
+           </div>
+</div>
+
+
+
+
+</article>
+
+-->
+<article>
+<div *ngFor="let p of mesproduit ">
+
+            <div>
+                <img [src]=p.image alt="mac" />
+              {{p.name}}
+              <button [routerLink]="['/selected-produit/',p.id]" class="btn btn-primary">Info</button>
+          </div>
+ </div>
+</article>
+<!--<h2>Ajout d'un produit</h2> 
+<form>
+  
+
+<input type="text" #nom/>
+<button  (click)="onAddStudent(nom.value)">Ajouter</button>
+
+</form>-->

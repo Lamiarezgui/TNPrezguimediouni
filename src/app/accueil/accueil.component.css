@@ -1,0 +1,124 @@
+footer{background-color:rgba(242, 219, 196, 1); text-align: center;}
+
+  
+  .anim{
+  text-align: center;
+  font-size: 100px;
+  color:palevioletred;
+  }
+  span {
+    display: inline-block;
+    text-shadow: 0 0 0 whitesmoke;
+    animation: smoky 5s 5s both;
+    animation-iteration-count: infinite;
+  }
+  
+  span:nth-child(){
+    animation-name: smoky-mirror;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes smoky {
+    0% {
+      text-shadow: 0 0 40px whitesmoke;
+    }
+    50% {
+      transform:
+        translate3d(15rem,-8rem,0)
+        rotate(-40deg)
+        skewX(70deg)
+        scale(1.5);
+      text-shadow: 0 0 20px whitesmoke;
+      opacity: 0;
+    }
+    0% {
+      text-shadow: 0 0 40px whitesmoke;
+    }
+  }
+  
+  @keyframes smoky-mirror {
+    0% {
+      text-shadow: 0 0 40px whitesmoke; 
+    }
+    50% {
+      text-shadow: 0 0 40px whitesmoke; 
+      transform:
+        translate3d(18rem,-8rem,0)
+        rotate(-40deg) 
+        skewX(-70deg)
+        scale(2);
+       text-shadow: 0 0 20px whitesmoke;
+      opacity: 0;
+    }
+
+    100% {
+      text-shadow: 0 0 40px whitesmoke; 
+    }
+
+  }
+  
+  
+  @keyframes AutoSlide {
+    0% {
+      left: 0px; /*1ère image*/
+    }
+    15% {
+      left: 0px; /*idem pour attente*/
+    }
+    35% {
+      left: -150px; /*2ème image*/
+    }
+    50% {
+      left: -150px; /*idem pour attente*/
+    }
+    70% {
+      left: -300px; /*3ème image*/
+    }
+    85% {
+      left: -300px; /*idem pour attente*/
+    }
+    100% {
+      left: 0px; /*1ère image*/
+    }
+  }
+
+  @keyframes AutoSlide {
+    0%, 15%, 100% {
+      left: 0px; /*1ère image*/
+    }
+    35%, 50% {
+      left: -150px; /*2ème image*/
+    }
+    70%, 85% {
+      left: -300px; /*3ème image*/
+    }
+  }
+  img{width: 700px;
+    height: 700px;
+    display: block;}
+    
+  #slideshow {
+    position: relative;
+    width:2000px;
+    height:2000px;
+    margin-left:150px;
+    overflow: hidden;
+  }
+  #sContent li {
+    display: inline;
+  }
+
+  #sContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin: 0;            
+    padding: 0;
+    
+    /*CSS3 keyframes animation*/
+    animation-name: AutoSlide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
