@@ -1,0 +1,10 @@
+<h1>Détail Produit {{mesproduit.name}}</h1>
+<ul class="list-group">
+    <li class="list-group-item" style="font-weight: bold;">{{mesproduit.id}}</li>
+    <li class="list-group-item">{{mesproduit.lib}}</li>
+    <li class="list-group-item">{{mesproduit.name}}</li>    
+    <li class="list-group-item">{{mesproduit.prix}}</li>
+    <li class="list-group-item">{{mesproduit.date}}</li>
+    <li class="list-group-item"><input type="checkbox" disabled [checked]="mesproduit.def">Expert</li>
+</ul>
+<button class="btn btn-primary" [routerLink]="['/produits']">Retour</button>
