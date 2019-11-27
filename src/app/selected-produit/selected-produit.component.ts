@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 import { Produit } from '../Produit';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selected-produit',
@@ -10,9 +11,10 @@ import { Produit } from '../Produit';
 })
 export class SelectedProduitComponent implements OnInit {
   id:number;
-  mesproduit;
-  produit;
-  rechercheProduit(){
+  mesproduit:Produit[];
+  produit: Produit;
+  
+ /* rechercheProduit(){
     for(let p of this.service.mesproduit)
     {
       if(this.id == p.id)
@@ -20,13 +22,17 @@ export class SelectedProduitComponent implements OnInit {
         this.produit = p;
       }
     }
-  }
-  constructor(private activatedRoute:ActivatedRoute,private service:UserService) { }
+  }*/
+  constructor(private activatedRoute:ActivatedRoute,private service:UserService,private router:Router) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
-    this.mesproduit = this.service.mesproduit;
-    this.rechercheProduit();
+    this.produit = this.service.getProduitByid(this.id);
+   // this.rechercheProduit();
+   
   }
-
+  onListproduits()
+  {
+  this.router.navigate(['/produits']);
+  }
 }

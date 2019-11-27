@@ -1,0 +1,5 @@
+h2{margin-top:70px}
+input.ng-valid{ border-left: 2px solid green;} 
+input.ng-invalid{ border-left: 2px solid red;}
+input{width:750px;height: 50px;margin-left:5px}
+label{margin-left:10px;font-style:italic}

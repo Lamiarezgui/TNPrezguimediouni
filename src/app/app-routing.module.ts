@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { Error404Component } from './error404/error404.component';
 import { ConnecterComponent } from './connecter/connecter.component';
 import { SelectedProduitComponent } from './selected-produit/selected-produit.component';
+import { AddproduitComponent } from './addproduit/addproduit.component';
 
 const routes: Routes = [
   {path:'connecter', component:ConnecterComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'produits', component:ProduitsComponent},
   {path:'produits/:id',component:SelectedProduitComponent},
   {path:'contact', component:ContactComponent},
+  {path:'addproduits',component:AddproduitComponent},
   {path:'', redirectTo:'connecter', pathMatch:'full'},
   {path:'**', component:Error404Component}
   

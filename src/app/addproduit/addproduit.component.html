@@ -1,0 +1,78 @@
+<div>
+<h2>Ajout d'un produit</h2> 
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group"> 
+
+        <label for="id">Identifiant de produit</label>
+        <input type="number" id="id" name="id" [(ngModel)]="identifiant" required class="form-control" #identif="ngModel" >
+       
+        <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger"> 
+            L'identifiant doit être un nombre
+         </div>
+        
+        
+        <label for="libelle"> Marque du produit </label> 
+        <input type="text" id="libelle" name="lib" [(ngModel)]="libelle" #lib="ngModel" class="form-control" required pattern="[A-Z][a-zA-Z]+" >
+        
+        
+        <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
+             La marque doit commencer par une majuscule suivie d'au moins 1 caractère </div>
+        <div [hidden]="!lib.errors?.required || lib.pristine" class="alert alert-danger"> La marque est un champ obligatoire </div>
+ 
+        <label for="name">Nom du produit</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required class="form-control" pattern="[A-Z][a-zA-Z]+" #nom="ngModel" >
+        
+        
+        <div *ngIf="nom.errors?.pattern && nom.dirty" class="alert alert-danger">
+                Le nom doit commencer par une majuscule suivie d'au moins 1 caractère 
+        </div>
+        <div [hidden]="!nom.errors?.required || nom.pristine" class="alert alert-danger">
+                Le nom est un champ obligatoire 
+        </div>
+
+        <label for="prix">Prix du produit</label>
+        <input type="number" id="prix" name="prix" [(ngModel)]="prix" required class="form-control"  #pri="ngModel" >
+        
+        
+        <div *ngIf="pri.errors?.pattern && pri.dirty" class="alert alert-danger">
+            Le Prix doit commencer par une majuscule suivie d'au moins 1 caractère 
+        </div>
+        <div [hidden]="!pri.errors?.required || pri.pristine" class="alert alert-danger"> 
+            Le Prix est un champ obligatoire
+        </div>
+
+        <label for="date">Date du fabrication de produit</label>
+        <input type="date" id="date" name="date" [(ngModel)]="date" required class="form-control"  #d="ngModel" >
+        <div [hidden]="!d.errors?.required || d.pristine" class="alert alert-danger"> 
+                La Date est un champ obligatoire
+            </div>
+
+        <label for="image">Image du produit</label>
+       <br> 
+        <input list="image" name="image" required [(ngModel)]="image" #im="ngModel">
+        <datalist id="image">
+          <option value="../assets/images.jfif">
+          <option value="../assets/pal1.jfif">
+          <option value="../assets/masc.png">
+        </datalist>
+        
+        <br>
+       
+
+
+        <label for="def">Expert?</label>
+        <br>
+        <input list="def" name="def" required [(ngModel)]="def" #de="ngModel">
+        <datalist id="def">
+          <option value="false">
+          <option value="true">
+         
+        </datalist>
+
+
+    </div>
+        
+        <button [disabled]="f.invalid">Enregistrer</button>
+       
+    </form>
+</div>

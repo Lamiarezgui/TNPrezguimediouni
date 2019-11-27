@@ -1,4 +1,4 @@
-<!--
+
 <article>
         <div class="row">
            <div class="col-sm-4">
@@ -6,11 +6,10 @@
                  <div class="hovereffect">
                       <img class="img" [src]=img alt="mac"/>
                       <div class="overlay">
-                         <p>Le système solaire externe : 
-                            Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
-                            Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
-                           Charon, la mission New Horizons, les objets transneptuniens,
-                           les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                         <p>Craquez pour les Rouges à Lèvres, véritables symboles si
+                            chers à l'univers de M·A·C. Osez diversifier
+                            vos looks et vos envies de beauté, révélez et sublimez 
+                            votre personnalité avec cette ultime touche de féminité.
                          </p>
                        </div>
                  </div>
@@ -21,11 +20,11 @@
              <div class="hovereffect">
               <img class="img" [src]=img2 alt="mac"/>
                 <div class="overlay">
-                  <p>Le système solaire externe : 
-                      Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
-                      Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
-                      Charon, la mission New Horizons, les objets transneptuniens,
-                      les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                  <p>Looking for some professional-quality,
+                     cruelty-free makeup brush sets? Look no further!
+                      The brush sets from BH Cosmetics give you the tools you need 
+                      to create even the most complex of looks. These professional 
+                      brushes are fully vegan, with a blend of synthetic bristles that are easy to clean.
                   </p>
                 </div>
               </div>
@@ -36,39 +35,24 @@
                 <div class="hovereffect">
                    <img class="img" [src]=img3 alt="mac"/>
                    <div class="overlay">
-                     <p>Le système solaire externe : 
-                        Jupiter, les satellites de Jupiter, Io, Europe, Ganymede, Callisto, la mission Juno,
-                        Saturne, les satellites de Saturne, Encelade, Titan, Uranus, Neptune, Triton, Pluton, 
-                        Charon, la mission New Horizons, les objets transneptuniens,
-                        les comètes, la mission Rosetta, la ceinture de Kuiper, le nuage d’Oort…
+                     <p>Enjoy a show-stopping array of different shadow shades and finishes with the
+                        high pigment eyeshadow palettes from BH Cosmetics. With 16,
+                        35, and 42 color shadow palettes, your options are endless when it
+                         comes to mixing and matching different shades.
                       </p>
                     </div>
                 </div>
               </div>
            </div>
 </div>
-
-
-
-
 </article>
-
--->
 <article>
 <div *ngFor="let p of mesproduit ">
 
             <div>
-                <img [src]=p.image alt="mac" />
+                <img  [src]=p.image alt="mac" />
               {{p.name}}
-              <button [routerLink]="['/selected-produit/',p.id]" class="btn btn-primary">Info</button>
+              <button [routerLink]="['/produits',p.id]" class="btn btn-primary">Info</button>
           </div>
  </div>
 </article>
-<!--<h2>Ajout d'un produit</h2> 
-<form>
-  
-
-<input type="text" #nom/>
-<button  (click)="onAddStudent(nom.value)">Ajouter</button>
-
-</form>-->

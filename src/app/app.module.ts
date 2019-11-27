@@ -1,6 +1,7 @@
-import { UserService } from "./user.service";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import { UserService } from "./user.service";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -9,8 +10,8 @@ import { ProduitsComponent } from './produits/produits.component';
 import { ContactComponent } from './contact/contact.component';
 import { Error404Component } from './error404/error404.component';
 import { ConnecterComponent } from './connecter/connecter.component';
-import {FormsModule} from '@angular/forms';
 import { SelectedProduitComponent } from './selected-produit/selected-produit.component';
+import { AddproduitComponent } from './addproduit/addproduit.component';
 
 @NgModule({providers: [UserService],
   declarations: [
@@ -21,7 +22,8 @@ import { SelectedProduitComponent } from './selected-produit/selected-produit.co
     ContactComponent,
     Error404Component,
     ConnecterComponent,
-    SelectedProduitComponent
+    SelectedProduitComponent,
+    AddproduitComponent
   ],
   imports: [
     BrowserModule,
