@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Produit } from '../Produit';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produits',
@@ -15,19 +16,22 @@ img2="../assets/pal.jpg";
 img3="../assets/img3.jpg";
 
 mesproduit:Produit[];
-  indice: number;
+
+  id:number;
+  
 
 
-
-  constructor(private  userservice : UserService ) { }
+  constructor(private  userservice : UserService,private activatedroute:ActivatedRoute ) { }
 
   ngOnInit() {
-    this.mesproduit = this.userservice.mesproduit;
-
-  }
-  onSupprime(indice:number){
-    this.userservice.Delete(this.indice);
-  }
+    this.mesproduit = this.userservice.mesproduit;}
+    Delete(id:number)
+    {
+  
+      this.mesproduit=this.userservice.DeleteProduit(id);
+  
+    }
+    
    
 }
 

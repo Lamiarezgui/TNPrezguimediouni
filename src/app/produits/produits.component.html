@@ -46,32 +46,16 @@
            </div>
 </div>
 </article>
+
+
 <article>
-<div class="header">
-  <div class="row">
-    <form class="form-horizontal col-md-8 col-md-offset-2" role="form" ng-controller="HeaderCtrl">
-        <div class="input-group">
-            <input ng-model="query" type="text" class="form-control" placeholder="Recherche">
-        <span class="input-group-btn">
-          <button type="submit"  type="button" ng-click="searchAction()">Rechercher</button>
-        </span>
-        </div>
-    </form>
-</div>
-</div>
-</article>
-<article>
-    <div id="example_filter" class="dataTables_filter">
-      <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label></div>
-<div *ngFor="let p of mesproduit ;let indice=index">
-  
-    
-  
+<div *ngFor="let p of mesproduit ">
             <div>
                 <img  [src]=p.image alt="mac" />
               {{p.name}}
              <button [routerLink]="['/produits',p.id]" class="btn btn-primary">Info</button>
-              <button (Click)="onSupprime(indice)" class="btn btn-primary">Supprimer</button>
+             <a [routerLink]="['/modifier']"><button class="btn btn-warning ml-4">Edit </button></a>
+             <button class="btn btn-danger ml-4" (click)="Delete(p.id)" >Supprimer </button>
             </div>
           </div>
 </article>

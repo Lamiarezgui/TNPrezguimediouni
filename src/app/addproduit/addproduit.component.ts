@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./addproduit.component.css']
 })
 export class AddproduitComponent implements OnInit {
-  id: Number;
-  lib: String;
-  name: String;
-  prix: Number;
-  image: String;
-  def: Boolean;
+  id: number;
+  lib: string;
+  name: string;
+  prix: number;
+  image: string;
+  def: boolean;
   date: Date;
 
   constructor(private userservice:UserService,private router:Router) { }

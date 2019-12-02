@@ -10,35 +10,74 @@ mesproduit=[
   new Produit(3,'Mac',' MASCARA RECOURBANT',75.25,"../assets/mac2.jpg",true,new Date(26/12/2015)),
   new Produit(4,'Mac','  FOND DE TEINT FLUIDE STUDIO FIX',106.6,"../assets/mac3.jpg",true,new Date(23/12/2018)),
 ];
-getProduitByid(id:number)
-  {
-    var i:number;
-    for(i=0;i<this.mesproduit.length;i++)
-    {
-      if(id==this.mesproduit[i].id)
-      return this.mesproduit[i];
-    }
-    return null;
 
-  }
-  public Delete(indice:number)
-  {this.mesproduit.splice(indice,1);
-  }
 
-  public modifier(index:number,id:number,lib:string,name:string,prix:number,image:String,def:boolean,date:Date)
-  {
-    this.mesproduit[index].id=id;
-    this.mesproduit[index].lib=lib;
-    this.mesproduit[index].name=name;
-    this.mesproduit[index].prix=prix;
-    this.mesproduit[index].image=image;
-    this.mesproduit[index].def=def;
-    this.mesproduit[index].date=date;
-    
-  }
+  id:number;
+    ido:number;
+    name:string;
+    image:string;
+    prix:number;
+    lib:string;
+    def:boolean;
+    date:Date;
+
 
   constructor() { }
-  ajouterproduit(id:Number,lib:String,name:String,prix:Number,image:String,def:Boolean,date:Date)
+  ajouterproduit(id:number,lib:string,name:string,prix:number,image:string,def:boolean,date:Date)
    { this.mesproduit.push(new Produit(id,lib,name,prix,image,def,date)); 
    }
+   getProduitByid(id : number):Produit
+    {
+      var i:number;
+      for(i=0;i<this.mesproduit.length;i++)
+      {
+        if(id==this.mesproduit[i].id)
+        return this.mesproduit[i];
+      }
+      return null;
+
+    }
+
+    DeleteProduit(id:number):Produit[]
+    {
+      let i:number
+      for(i=0;i<this.mesproduit.length;i++)
+      {
+        if(id==this.mesproduit[i].id)
+        this.mesproduit.splice(i,1);
+  
+      }
+      return this.mesproduit;
+
+    }
+    editerProduitserv(ido:number,id:number,lib:string,name:string,image:string,prix:number,def:boolean)
+    {
+
+      let obj:Produit=this.getProduitByid(ido);
+
+      
+      if(id>=100 && id<1000)
+      obj.id=id;
+
+      
+      obj.lib=lib;
+
+      
+      obj.name=name;
+
+
+      if(image.length!=0)
+      obj.image=image;
+
+      if(prix!=null)
+      obj.prix=prix;
+      
+      if(def==true || def==false)
+      obj.def=def;
+
+
+
+    }
+     
+
 }

@@ -14,23 +14,17 @@ export class SelectedProduitComponent implements OnInit {
   mesproduit:Produit[];
   produit: Produit;
   
- /* rechercheProduit(){
-    for(let p of this.service.mesproduit)
-    {
-      if(this.id == p.id)
-      {
-        this.produit = p;
-      }
-    }
-  }*/
+ 
   constructor(private activatedRoute:ActivatedRoute,private service:UserService,private router:Router) { }
 
   ngOnInit() {
+
     this.id = this.activatedRoute.snapshot.params['id'];
     this.produit = this.service.getProduitByid(this.id);
-   // this.rechercheProduit();
    
   }
+  
+
   onListproduits()
   {
   this.router.navigate(['/produits']);
