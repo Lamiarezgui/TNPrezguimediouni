@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-error404',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Error404Component implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute,private service:UserService,private router:Router) { }
 
   ngOnInit() {
+  }
+  connect(){
+    this.router.navigate(['/connecter']);
   }
 
 }

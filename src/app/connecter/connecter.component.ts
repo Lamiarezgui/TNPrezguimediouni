@@ -9,8 +9,8 @@ import { NgForm } from '@angular/forms';
 export class ConnecterComponent implements OnInit {
 
   constructor(private router:Router) { }
-  user:string="eya";
-  password:string="lamia";
+  user:string;
+  password:string;
   onAfficher(form:NgForm)
   {
   if((form.value['user']=="Eya" ||form.value['user']=="Lamia" )&& form.value['password']=="sismakeup")

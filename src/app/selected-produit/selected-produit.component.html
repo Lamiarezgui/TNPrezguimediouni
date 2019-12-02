@@ -5,6 +5,6 @@
     <li class="list-group-item">Nom: {{produit.name}}</li>    
     <li class="list-group-item">Prix: {{produit.prix}} Dt</li>
     <li class="list-group-item">Date de fabrication: {{produit.date}}</li>
-    <li class="list-group-item"><input type="checkbox" disabled [checked]="mesproduit.def">Expert</li>
+    <li class="list-group-item"><input type="checkbox" [checked]="mesproduit.def">Soldé</li>
 </ul>
 <button class="btn btn-primary" (click)="onListproduits()">Retour</button>

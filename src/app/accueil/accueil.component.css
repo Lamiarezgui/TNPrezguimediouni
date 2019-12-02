@@ -1,4 +1,6 @@
-footer{background-color:rgba(242, 219, 196, 1); text-align: center;}
+#di{background-color:rgba(242, 219, 196, 1);
+   text-align: center;
+margin-top:10px}
 
   
   .anim{
@@ -60,55 +62,52 @@ footer{background-color:rgba(242, 219, 196, 1); text-align: center;}
   
   @keyframes AutoSlide {
     0% {
-      left: 0px; /*1ère image*/
+      left: 0px; 
     }
-    15% {
-      left: 0px; /*idem pour attente*/
-    }
+    
     35% {
-      left: -150px; /*2ème image*/
+      left: -150px; 
     }
     50% {
-      left: -150px; /*idem pour attente*/
+      left: -150px; 
     }
     70% {
-      left: -300px; /*3ème image*/
+      left: -300px; 
     }
     85% {
-      left: -300px; /*idem pour attente*/
+      left: -300px; 
     }
     100% {
-      left: 0px; /*1ère image*/
+      left: 0px; 
     }
   }
 
   @keyframes AutoSlide {
     0%, 15%, 100% {
-      left: 0px; /*1ère image*/
+      left: 0px; 
     }
     35%, 50% {
-      left: -150px; /*2ème image*/
+      left: -150px;
     }
     70%, 85% {
-      left: -300px; /*3ème image*/
+      left: -300px; 
     }
   }
-  img{width: 700px;
-    height: 700px;
-    display: block;}
+  img{width: 500px;
+    height: 500px;
+    display: inline-block;}
     
   #slideshow {
     position: relative;
-    width:2000px;
-    height:2000px;
-    margin-left:150px;
+    width:1500px;
+    height:500px;
+    margin-left:0;
     overflow: hidden;
   }
-  #sContent li {
-    display: inline;
-  }
+  
 
-  #sContent {
+  #sContent{
+    display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
@@ -122,3 +121,34 @@ footer{background-color:rgba(242, 219, 196, 1); text-align: center;}
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
+  #Content{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin-left: 450px;            
+    padding: 0;
+    
+    /*CSS3 keyframes animation*/
+    animation-name: AutoSlide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  #ssContent{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin-left: 950px;            
+    padding: 0;
+    
+    /*CSS3 keyframes animation*/
+    animation-name: AutoSlide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  

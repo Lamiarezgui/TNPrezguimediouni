@@ -14,16 +14,20 @@ img="../assets/img.jpg";
 img2="../assets/pal.jpg";
 img3="../assets/img3.jpg";
 
-
 mesproduit:Produit[];
+  indice: number;
 
 
-  constructor(private  userService : UserService ) { }
+
+  constructor(private  userservice : UserService ) { }
 
   ngOnInit() {
-    this.mesproduit = this.userService.mesproduit;
+    this.mesproduit = this.userservice.mesproduit;
 
   }
-
+  onSupprime(indice:number){
+    this.userservice.Delete(this.indice);
+  }
+   
 }
 

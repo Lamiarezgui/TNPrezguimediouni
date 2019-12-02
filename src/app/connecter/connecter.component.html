@@ -18,7 +18,7 @@
                                     <div class="input-group-prepend">
                                             <span class="input-group-text"></span>
                                         </div>
-                                        <input type="text" class="form-control" name="user" ngModel required pattern="[A-Z][a-zA-Z]+" #user="ngModel"/> 
+                                        <input type="text" class="form-control" name="user" ngModel required pattern="[A-Z][a-zA-Z]+" #user="ngModel" /> 
                             </div>
                             <div *ngIf="user.errors?.pattern && user.dirty" class="alert alert-danger">
                                     user a un format incorrect
@@ -31,7 +31,7 @@
                                         <div class="input-group-prepend">
                                                 <span class="input-group-text"></span>
                                             </div>
-                                            <input type="password" class="form-control" name="password" ngModel required pattern="[a-z]+" minlength="9"  #password="ngModel"/> 
+                                            <input type="password" class="form-control" name="password" ngModel required pattern="[a-z]+" minlength="9"  #password="ngModel" /> 
                                 </div>
                                 <div *ngIf="password.errors?.pattern  && password.errors?.minlength && password.dirty" class="alert alert-danger">
                                         password a un format incorrect
