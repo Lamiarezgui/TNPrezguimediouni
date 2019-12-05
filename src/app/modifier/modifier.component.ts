@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-modifier',
@@ -23,7 +24,7 @@ export class ModifierComponent implements OnInit {
 
   ngOnInit() {
   }
-  editerProduit()
+  editerProduit(f:NgForm)
   {
 
     if(this.userservice.getProduitByid(this.ido)!=null)

@@ -11,7 +11,8 @@ margin-top:10px}
   span {
     display: inline-block;
     text-shadow: 0 0 0 whitesmoke;
-    animation: smoky 5s 5s both;
+    animation-name: smoky ;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
   }
   
@@ -26,14 +27,14 @@ margin-top:10px}
     }
     50% {
       transform:
-        translate3d(15rem,-8rem,0)
+        translate(15rem,-8rem)
         rotate(-40deg)
         skewX(70deg)
         scale(1.5);
       text-shadow: 0 0 20px whitesmoke;
       opacity: 0;
     }
-    0% {
+    100% {
       text-shadow: 0 0 40px whitesmoke;
     }
   }
@@ -45,7 +46,7 @@ margin-top:10px}
     50% {
       text-shadow: 0 0 40px whitesmoke; 
       transform:
-        translate3d(18rem,-8rem,0)
+        translate(18rem,-8rem)
         rotate(-40deg) 
         skewX(-70deg)
         scale(2);
@@ -60,37 +61,17 @@ margin-top:10px}
   }
   
   
-  @keyframes AutoSlide {
-    0% {
-      left: 0px; 
-    }
-    
-    35% {
-      left: -150px; 
-    }
-    50% {
-      left: -150px; 
-    }
-    70% {
-      left: -300px; 
-    }
-    85% {
-      left: -300px; 
-    }
-    100% {
-      left: 0px; 
-    }
-  }
+  
 
   @keyframes AutoSlide {
-    0%, 15%, 100% {
+    0%,  100% {
       left: 0px; 
     }
-    35%, 50% {
-      left: -150px;
+     50% {
+      left: -300px;
     }
-    70%, 85% {
-      left: -300px; 
+     85% {
+      left: -500px; 
     }
   }
   img{width: 500px;
@@ -143,6 +124,21 @@ margin-top:10px}
     left: 0;
     width: 450px;
     margin-left: 950px;            
+    padding: 0;
+    
+    /*CSS3 keyframes animation*/
+    animation-name: AutoSlide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  #sssContent{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin-left: 1450px;            
     padding: 0;
     
     /*CSS3 keyframes animation*/

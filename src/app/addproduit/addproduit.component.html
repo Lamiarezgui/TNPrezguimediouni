@@ -1,10 +1,11 @@
-<div>
-<h2>Ajout d'un produit</h2> 
+<app-menu></app-menu>
+<div class="col-md-6 mx-auto" >
+<h2 class="text-sucess">Ajout d'un produit</h2> 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group"> 
+    <div class="form-group"  > 
 
         <label for="id">Identifiant de produit</label>
-        <input type="number" id="id" name="id" [(ngModel)]="identifiant" required class="form-control" #identif="ngModel" >
+        <input type="number" id="id" name="id" [(ngModel)]="identifiant" required pattern="[0-9]+" class="form-control" #identif="ngModel" >
        
         <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger"> 
             L'identifiant doit être un nombre
@@ -49,31 +50,33 @@
 
         <label for="image">Image du produit</label>
        <br> 
-        <input list="image" name="image" required [(ngModel)]="image" #im="ngModel">
-        <datalist id="image">
-          <option value="../assets/images.jfif">
-          <option value="../assets/pal1.jfif">
-          <option value="../assets/masc.png">
-            <option value="../assets/download.jfif">
-        </datalist>
+        
+        <select id="image" name="image" required [(ngModel)]="image" #im="ngModel">
+          <option value="../assets/images.jfif">../assets/images.jfif</option>
+          <option value="../assets/pal1.jfif">../assets/pal1.jfif</option>
+          <option value="../assets/masc.png">../assets/masc.png</option>
+            <option value="../assets/download.jfif">../assets/download.jfif</option>
+            </select>
         
         <br>
-       
-
-
-        <label for="def">Soldé ?</label>
+        <label for="de">Solde</label>
         <br>
-        <input list="def" name="def" required [(ngModel)]="def" #de="ngModel">
-        <datalist id="def">
-          <option value="false">
-          <option value="true">
-         
-        </datalist>
+        <select id="def" name="def" required [(ngModel)]="def" #de="ngModel">
+            <option value="true">True</option>
+            <option value="false">False</option>
+              </select>
+              <br>
 
+
+        
 
     </div>
         
-        <button [disabled]="f.invalid">Enregistrer</button>
+        <button [disabled]="f.invalid" class="btn btn-primary">Enregistrer</button> 
+         <button type="reset" class="btn btn-danger ">Annuler</button>
+        {{message}}
+      
+    
        
     </form>
 </div>

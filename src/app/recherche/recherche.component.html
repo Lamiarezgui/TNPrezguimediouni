@@ -1,12 +1,17 @@
-<h2 class="text-center text-danger">Liste Articles</h2>
-  <h3 class="text-success">Search by name</h3>
-  <div class="active-pink-3 active-pink-4 mb-4">
+<app-menu></app-menu>
+<h2 class="text-center text-primary">Liste Articles</h2>
+  <h3 class="text-danger">Search by name</h3>
+  <div >
   <input class="form-control" type="text" placeholder="Recherche par nom" [(ngModel)]="name" aria-label="Search">
+  </div>
+  <h3 class="text-danger">Search by Price</h3>
+  <div  >
+  <input class="form-control" type="text" placeholder="search by price" [(ngModel)]="prix" aria-label="Search">
   </div>
   <div class="container">
   <ul class="list-group" >
   <ng-container *ngFor="let p of mesproduit" >
-  <li class="list-group-item" *ngIf=" p.name.toUpperCase().indexOf(name.toUpperCase())!=-1" >
+  <li class="list-group-item" *ngIf=" p.prix>=prix && p.name.toUpperCase().indexOf(name.toUpperCase())!=-1" >
   <div>
   <img [src]="p.image" >
   <ul>

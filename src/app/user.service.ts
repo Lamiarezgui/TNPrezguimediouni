@@ -23,20 +23,24 @@ mesproduit=[
 
 
   constructor() { }
-  ajouterproduit(id:number,lib:string,name:string,prix:number,image:string,def:boolean,date:Date)
-   { this.mesproduit.push(new Produit(id,lib,name,prix,image,def,date)); 
-   }
+  
    getProduitByid(id : number):Produit
     {
-      var i:number;
-      for(i=0;i<this.mesproduit.length;i++)
+      for(let p of this.mesproduit)
       {
-        if(id==this.mesproduit[i].id)
-        return this.mesproduit[i];
+        if(p.id==id)
+        return p;
       }
       return null;
 
     }
+    ajouterproduit(id:number,lib:string,name:string,prix:number,image:string,def:boolean,date:Date):boolean
+   { 
+     if(this.getProduitByid(id)==null)
+     {  this.mesproduit.push(new Produit(id,lib,name,prix,image,def,date)); 
+      return true;  }
+      return false;
+   }
 
     DeleteProduit(id:number):Produit[]
     {
@@ -56,7 +60,7 @@ mesproduit=[
       let obj:Produit=this.getProduitByid(ido);
 
       
-      if(id>=100 && id<1000)
+      if(id>=10 && id<100)
       obj.id=id;
 
       

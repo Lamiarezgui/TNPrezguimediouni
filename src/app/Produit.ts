@@ -19,46 +19,46 @@ export class Produit {
         this.date=date;
 
     }
-    public get matricule(): number {
+    public getid(): Number {
         return this.id;
       }
-      public set matricule(value: number) {
+      public setid(value: number) {
         this.id = value;
       }
-      public get libelle():string {
+      public getlib():string {
         return this.lib;
       }
-      public set libelle(value:string) {
+      public setlib(value:string) {
         this.lib= value;
       }
-      public get nom():string {
+      public getname():string {
         return this.name;
       }
-      public set nom(value:string) {
+      public setname(value:string) {
         this.name = value;
       }
-      public get photo():string {
+      public getimage():string {
         return this.image;
       }
-      public set photo(value:string) {
+      public setimage(value:string) {
         this.image = value;
       }
-      public get Prix(): number {
+      public getprix(): number {
         return this.prix;
       }
-      public set Prix(value: number) {
+      public setprix(value: number) {
         this.prix = value;
       }
-      public get dateFabrication(): Date {
+      public getdate(): Date {
         return this.date;
       }
-      public set dateFabrication(value: Date) {
+      public setdate(value: Date) {
         this.date = value;
       }
-      public get defi(): boolean {
+      public getdef(): boolean {
         return this.def;
       }
-      public set defi(value: boolean) {
+      public setdef(value: boolean) {
         this.def = value;
       }
 }

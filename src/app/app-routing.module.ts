@@ -9,6 +9,7 @@ import { AddproduitComponent } from './addproduit/addproduit.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { RechercheComponent } from './recherche/recherche.component';
 
+
 const routes: Routes = [
   {path:'connecter', component:ConnecterComponent},
   {path:'accueil', component:AccueilComponent},

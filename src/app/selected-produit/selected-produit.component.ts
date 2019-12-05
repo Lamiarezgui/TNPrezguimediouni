@@ -13,8 +13,7 @@ export class SelectedProduitComponent implements OnInit {
   id:number;
   mesproduit:Produit[];
   produit: Produit;
-  
- 
+
   constructor(private activatedRoute:ActivatedRoute,private service:UserService,private router:Router) { }
 
   ngOnInit() {
