@@ -19,46 +19,46 @@ export class Produit {
         this.date=date;
 
     }
-    public getid(): Number {
+    public get idt(): number {
         return this.id;
       }
-      public setid(value: number) {
+      public set idt(value: number) {
         this.id = value;
       }
-      public getlib():string {
+      public get libb():string {
         return this.lib;
       }
-      public setlib(value:string) {
+      public set libb(value:string) {
         this.lib= value;
       }
-      public getname():string {
+      public get nom():string {
         return this.name;
       }
-      public setname(value:string) {
+      public set nom(value:string) {
         this.name = value;
       }
-      public getimage():string {
+      public get photo():string {
         return this.image;
       }
-      public setimage(value:string) {
+      public set photo(value:string) {
         this.image = value;
       }
-      public getprix(): number {
+      public get pri(): number {
         return this.prix;
       }
-      public setprix(value: number) {
+      public set pri(value: number) {
         this.prix = value;
       }
-      public getdate(): Date {
+      public get dat(): Date {
         return this.date;
       }
-      public setdate(value: Date) {
+      public set dat(value: Date) {
         this.date = value;
       }
-      public getdef(): boolean {
+      public get deff(): boolean {
         return this.def;
       }
-      public setdef(value: boolean) {
+      public set deff(value: boolean) {
         this.def = value;
       }
 }

@@ -1,18 +1,36 @@
 <app-menu></app-menu>
-<h2 class="text-center text-primary">Liste Articles</h2>
-  <h3 class="text-danger">Search by name</h3>
-  <div >
-  <input class="form-control" type="text" placeholder="Recherche par nom" [(ngModel)]="name" aria-label="Search">
-  </div>
-  <h3 class="text-danger">Search by Price</h3>
-  <div  >
-  <input class="form-control" type="text" placeholder="search by price" [(ngModel)]="prix" aria-label="Search">
-  </div>
+
+<head>
+    <title>Awesome Search Box</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+<h2 class="text-center text-danger">Liste Articles</h2>
+  
+  <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search Name..." [(ngModel)]="name" >
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Search Price..."  [(ngModel)]="prix" >
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
+      </div>
+
+
   <div class="container">
   <ul class="list-group" >
   <ng-container *ngFor="let p of mesproduit" >
-  <li class="list-group-item" *ngIf=" p.prix>=prix && p.name.toUpperCase().indexOf(name.toUpperCase())!=-1" >
-  <div>
+    <li class="list-group-item" class="bgl" *ngIf="p.prix>=prix && p.name.toUpperCase().indexOf(name.toUpperCase())!=-1" > 
+       <div>
   <img [src]="p.image" >
   <ul>
   <li > <span class="text-info">ID:</span> {{p.id}}</li>
@@ -24,5 +42,6 @@
   <hr>
   </li>
   </ng-container>
+
   </ul>
   </div>

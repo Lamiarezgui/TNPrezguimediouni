@@ -7,8 +7,11 @@ export class UserService {
   
 mesproduit=[
   new Produit(1,'Mac','Rouge a lévres Nude ',45.000,"../assets/mac1.jpg",false,new Date(25/12/2017)),
-  new Produit(3,'Mac',' MASCARA RECOURBANT',75.25,"../assets/mac2.jpg",true,new Date(26/12/2015)),
-  new Produit(4,'Mac','  FOND DE TEINT FLUIDE STUDIO FIX',106.6,"../assets/mac3.jpg",true,new Date(23/12/2018)),
+  new Produit(2,'Mac',' MASCARA RECOURBANT',75.25,"../assets/mac2.jpg",true,new Date(26/11/2015)),
+  new Produit(3,'Mac','  FOND DE TEINT FLUIDE STUDIO FIX',106.6,"../assets/mac3.jpg",true,new Date(23/12/2018)),
+  new Produit(4,'Mac',' PALETTE POUR LES YEUX ',142.75,"../assets/palette2.jpg",false,new Date(23/12/2018)),
+  new Produit(5,'Mac','  CONTOURING STICK PERFECTEUR CORRECTEUR / STUDIO FIX',111.02,"../assets/stick2.jpg",true,new Date(23/12/2018)),
+
 ];
 
 
@@ -54,30 +57,42 @@ mesproduit=[
       return this.mesproduit;
 
     }
-    editerProduitserv(ido:number,id:number,lib:string,name:string,image:string,prix:number,def:boolean)
+    addProduit(ido:number,id:number,lib:string,name:string,image:string,prix:number,def:boolean,date:Date)
     {
 
       let obj:Produit=this.getProduitByid(ido);
 
       
-      if(id>=10 && id<100)
+      if(id>0 && id<100)
       obj.id=id;
+      else
+      obj.id=obj.id;
 
       
+      if(lib.length!=0)
       obj.lib=lib;
-
+      else
+      obj.lib=obj.lib;
       
+      if(name.length!=0)
       obj.name=name;
-
+      else
+      obj.name=obj.name;
 
       if(image.length!=0)
       obj.image=image;
+      else
+      obj.image=obj.image;
 
       if(prix!=null)
       obj.prix=prix;
-      
+      else
+      obj.prix=obj.prix;
+
       if(def==true || def==false)
       obj.def=def;
+      else
+      obj.def=obj.def;
 
 
 

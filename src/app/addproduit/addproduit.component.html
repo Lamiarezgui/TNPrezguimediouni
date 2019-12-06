@@ -1,8 +1,14 @@
 <app-menu></app-menu>
-<div class="col-md-6 mx-auto" >
-<h2 class="text-sucess">Ajout d'un produit</h2> 
+
+<body>
+<div id="home" class="card" class="py-5">
+        <div class="row">
+                <div class="card rounded-0">
+                <div class="card-header">
+<h2>Ajout d'un produit</h2>
+</div> 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group"  > 
+    <div class="form-group"> 
 
         <label for="id">Identifiant de produit</label>
         <input type="number" id="id" name="id" [(ngModel)]="identifiant" required pattern="[0-9]+" class="form-control" #identif="ngModel" >
@@ -52,31 +58,42 @@
        <br> 
         
         <select id="image" name="image" required [(ngModel)]="image" #im="ngModel">
-          <option value="../assets/images.jfif">../assets/images.jfif</option>
-          <option value="../assets/pal1.jfif">../assets/pal1.jfif</option>
-          <option value="../assets/masc.png">../assets/masc.png</option>
-            <option value="../assets/download.jfif">../assets/download.jfif</option>
+                
+                        <option value="../assets/macrouge2.jpg">../assets/macrouge2.jpg</option>
+                        <option value="../assets/rouge2.jpg">../assets/rouge2.jpg</option>
+                        <option value="../assets/mascara2.jpg">../assets/mascara2.jpg</option>
+                        <option value="../assets/macrouge2.jpg">../assets/macrouge2.jpg</option>
+                        <option value="../assets/fond.jpg">../assets/fond.jpg</option>
+                          <option value="../assets/palette2.jpg">../assets/palette2.jpg</option>
+                        <option value="../assets/palette3.jpg">../assets/palette3.jpg</option>
+      
+                      
             </select>
         
         <br>
-        <label for="de">Solde</label>
+       
+
+
+        <label for="def">Soldé ?</label>
         <br>
-        <select id="def" name="def" required [(ngModel)]="def" #de="ngModel">
-            <option value="true">True</option>
-            <option value="false">False</option>
-              </select>
-              <br>
-
-
         
+        <select id="def"  name="def" required [(ngModel)]="def" #de="ngModel" class="form-control rounded-0"j>
+          <option value="false">false</option>
+          <option value="true">true</option>
+         
+        </select>
+
 
     </div>
         
         <button [disabled]="f.invalid" class="btn btn-primary">Enregistrer</button> 
-         <button type="reset" class="btn btn-danger ">Annuler</button>
+         <button type="reset" class="btn btn-danger">Annuler</button>
         {{message}}
       
     
        
     </form>
 </div>
+</div>
+</div>
+</body>

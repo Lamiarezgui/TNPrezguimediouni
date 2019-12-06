@@ -21,12 +21,11 @@ export class AddproduitComponent implements OnInit {
   constructor(private userservice:UserService,private router:Router) { }
   onSubmit(f:NgForm){
     this.submitted = true;
-    if(this.userservice.ajouterproduit(f.value['id'],f.value['lib'],f.value[name],f.value['prix'],f.value['image'],f.value['def'],f.value['date'])!=false){
+    if(this.userservice.ajouterproduit(f.value['id'],f.value['lib'],f.value['name'],f.value['prix'],f.value['image'],f.value['def'],f.value['date'])!=false){
       this.message = "le produit "+f.value['id']+" a été ajouté avec succes.";
     }else{
       this.message = "le produit "+f.value['id']+" existe déjà !";
     }
-    this.router.navigate(['/produits']);
   }
   ngOnInit() {
   }

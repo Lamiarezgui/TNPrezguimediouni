@@ -1,3 +1,11 @@
+h2{margin-top:30px}
+input.ng-valid{ border-left: 2px solid green;} 
+input.ng-invalid{ border-left: 2px solid red;}
+body{
+    background-image: url('src\assets\back2.jpg');
+   
+    background-repeat: no-repeat;
+    
+    font-family: 'Numans', sans-serif;
+}
 
-input.ng-valid,select.ng-valid{ border-left: 2px solid green;} 
-input.ng-invalid,select.ng-invalid{ border-left: 2px solid red;}

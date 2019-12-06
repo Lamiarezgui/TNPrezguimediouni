@@ -13,6 +13,7 @@ import { SelectedProduitComponent } from './selected-produit/selected-produit.co
 import { AddproduitComponent } from './addproduit/addproduit.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { NomPipe } from './nom.pipe';
 
 @NgModule({providers: [UserService],
   declarations: [
@@ -26,7 +27,8 @@ import { RechercheComponent } from './recherche/recherche.component';
     SelectedProduitComponent,
     AddproduitComponent,
     ModifierComponent,
-    RechercheComponent
+    RechercheComponent,
+    NomPipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-
+<body>
 <div class="py-5">
     <div class="row">
       <div class="col-md-6 mx-auto">
@@ -10,38 +10,62 @@
           <div class="card-body">
           <div class="form-group">
                 <label>identifiant original</label>
-                <input type="text" [(ngModel)]="ido"  placeholder="obligatoire"  class="form-control rounded-0" >
+                <input type="text" [(ngModel)]="ido"  required pattern="[0-9]+" placeholder="obligatoire"  class="form-control rounded-0" >
               </div>
               <div [hidden] ="!submitted" class="alert alert-danger">
               {{message}}
               </div>
               <div class="form-group">
                 <label>Identifiant</label>
-                <input type="text" [(ngModel)]="id"    class="form-control rounded-0" >
+                <input type="text" [(ngModel)]="id"   pattern="[0-9]+"   class="form-control rounded-0" >
               </div>
               <div class="form-group">
                 <label>Marque</label>
-                <input type="text" [(ngModel)]="lib"  class="form-control rounded-0"  >
+                <input type="text" [(ngModel)]="lib" pattern="[A-Z][a-zA-Z]+" class="form-control rounded-0"  >
               </div>
               <div class="form-group">
                 <label>Name</label>
-                <input type="text" [(ngModel)]="name"  class="form-control rounded-0" >
+                <input type="text" [(ngModel)]="name" pattern="[A-Z][a-zA-Z]+" class="form-control rounded-0" >
               </div>
               <div class="form-group">
-                <label>photo lien</label>
-                <input type="text" [(ngModel)]="image"  class="form-control rounded-0" >
+                <label>Image lien</label>
+                <input list="browsers" class="form-control rounded-0" [(ngModel)]="image" >
+
+                <datalist id="browsers">
+                  <option value="../assets/macrouge2.jpg">
+                  <option value="../assets/rouge2.jpg">
+                  <option value="../assets/mascara2.jpg">
+                  <option value="../assets/macrouge2.jpg">
+                  <option value="../assets/fond.jpg">
+                    <option value="../assets/palette2.jpg">
+                  <option value="../assets/palette3.jpg">
+
+                </datalist>       
               </div>
               <div class="form-group">
                 <label>prix</label>
-                <input type="text" [(ngModel)]="prix"  class="form-control rounded-0" >
+                <input type="number" [(ngModel)]="prix"  pattern="[0-9]+"  class="form-control rounded-0" >
               </div>
               <div class="form-group">
+                  <label>Date</label>
+                  <input type="date" [(ngModel)]="date"  class="form-control rounded-0" >
+                </div>
+                <br>
+              <div class="form-group">
                 <label>Solde</label>
-                <input type="text" [(ngModel)]="def"   placeholder="True or False" class="form-control rounded-0" >
-              </div>
+                <br>
+                <input list="def" [(ngModel)]="def">
+
+                <datalist id="def">
+                  <option value="true">
+                  <option value="false">
+                    </datalist>              
+                     </div>
               <button type="button"  class="btn btn-warning float-right" (click)="editerProduit()">Editer</button>
               <button type="button"  class="btn btn-danger " (click)="versProduit()" >Annuler</button>
               
           </div>
         </div>
       </div>
+      </div>
+      </div></body>

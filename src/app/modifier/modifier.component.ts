@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Produit } from '../Produit';
 
 @Component({
   selector: 'app-modifier',
@@ -19,7 +20,7 @@ export class ModifierComponent implements OnInit {
   submitted:boolean=false;
   message:String;
   date: Date;
-
+p:Produit;
   constructor(private userservice:UserService,private activatedrouter:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
@@ -29,7 +30,7 @@ export class ModifierComponent implements OnInit {
 
     if(this.userservice.getProduitByid(this.ido)!=null)
     {
-    this.userservice.editerProduitserv(this.ido,this.id,this.lib,this.name,this.image,this.prix,this.def);
+    this.userservice.addProduit(this.ido,this.id,this.lib,this.name,this.image,this.prix,this.def,this.date);
     this.router.navigate(['/produits']);
     }
     else 

@@ -1,10 +1,9 @@
-<app-menu></app-menu>
 <header><h2>Détail Produit {{produit.name |uppercase}}</h2></header>
 <article><div>
 <ul class="list-group">
     <li class="list-group-item" style="font-weight: bold;">ID: {{produit.id}}</li>
     <li class="list-group-item">Marque: {{produit.lib}}</li>
-    <li class="list-group-item">Nom: {{produit.name}}</li>    
+    <li class="list-group-item">Nom: {{produit.name |nom}}</li>    
     <li class="list-group-item">Prix: {{produit.prix}} Dt</li>
     <li class="list-group-item">Date de fabrication: {{produit.date|date:'d MMM y'}}</li>
     <li class="list-group-item"><input type="checkbox" [checked]="produit.def">Soldé</li>

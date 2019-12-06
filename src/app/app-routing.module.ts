@@ -9,14 +9,13 @@ import { AddproduitComponent } from './addproduit/addproduit.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { RechercheComponent } from './recherche/recherche.component';
 
-
 const routes: Routes = [
   {path:'connecter', component:ConnecterComponent},
   {path:'accueil', component:AccueilComponent},
   {path:'produits', component:ProduitsComponent},
   {path:'produits/:id',component:SelectedProduitComponent},
   {path:'addproduits',component:AddproduitComponent},
-  {path:'modifier',component:ModifierComponent},
+  {path:'modifier/:id',component:ModifierComponent},
   {path:'recherche',component:RechercheComponent},
   {path:'', redirectTo:'connecter', pathMatch:'full'},
   {path:'**', component:Error404Component}

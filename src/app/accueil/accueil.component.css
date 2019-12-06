@@ -11,8 +11,7 @@ margin-top:10px}
   span {
     display: inline-block;
     text-shadow: 0 0 0 whitesmoke;
-    animation-name: smoky ;
-    animation-duration: 5s;
+    animation: smoky 5s 5s both;
     animation-iteration-count: infinite;
   }
   
@@ -27,14 +26,14 @@ margin-top:10px}
     }
     50% {
       transform:
-        translate(15rem,-8rem)
+        translate3d(15rem,-8rem,0)
         rotate(-40deg)
         skewX(70deg)
         scale(1.5);
       text-shadow: 0 0 20px whitesmoke;
       opacity: 0;
     }
-    100% {
+    0% {
       text-shadow: 0 0 40px whitesmoke;
     }
   }
@@ -46,7 +45,7 @@ margin-top:10px}
     50% {
       text-shadow: 0 0 40px whitesmoke; 
       transform:
-        translate(18rem,-8rem)
+        translate3d(18rem,-8rem,0)
         rotate(-40deg) 
         skewX(-70deg)
         scale(2);
@@ -61,16 +60,36 @@ margin-top:10px}
   }
   
   
-  
-
   @keyframes AutoSlide {
-    0%,  100% {
+    0% {
       left: 0px; 
     }
-     50% {
+    
+    35% {
+      left: -150px; 
+    }
+    50% {
+      left: -150px; 
+    }
+    70% {
+      left: -300px; 
+    }
+    85% {
+      left: -300px; 
+    }
+    100% {
+      left: 0px; 
+    }
+  }
+
+  @keyframes AutoSlide {
+    0%, 15%, 100% {
+      left: 0px; 
+    }
+    35%, 50% {
       left: -300px;
     }
-     85% {
+    70%, 85% {
       left: -500px; 
     }
   }
@@ -147,4 +166,3 @@ margin-top:10px}
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
-  
